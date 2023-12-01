@@ -21,7 +21,7 @@ export class BoardComponent implements OnInit {
       this.loadGame();
   }
   loadGame(){
-    this.squares = Array(30).fill(null);
+    this.squares = Array(30).fill('⚪️');
     this.winner = undefined;
     this.xIsNext = true;
     this.gameOver=false;
@@ -34,9 +34,9 @@ export class BoardComponent implements OnInit {
         let moverRow=4-row;
         for(let column=0; column<6;column++){
           //Empty the from the top down 
-          this.squares[(row*6)+column]='';
+          this.squares[(row*6)+column]='⚪️';
 
-          this.squares[(moverRow*6)+column]=this.squares[(moverRow*6)+column-6];
+          //this.squares[(moverRow*6)+column]=this.squares[(moverRow*6)+column-6];
         }
         
        }, row*500);
@@ -58,7 +58,7 @@ export class BoardComponent implements OnInit {
   
     for (let row =4 ; row >= 0; row--) {
       const index = row * 6 + column;
-      if (!this.squares[index]) {
+      if (this.squares[index]==='⚪️') {
         this.squares.splice(index, 1, this.player);
         this.xIsNext = !this.xIsNext;
         break; 
@@ -94,7 +94,7 @@ export class BoardComponent implements OnInit {
     for (let i = 0; i < lines.length; i++) {
       const [a,b,c,d] = lines[i];
       if (
-        this.squares[a] &&
+        this.squares[a]!='⚪️' &&
         this.squares[a] === this.squares[b] &&
         this.squares[a] === this.squares[c] &&
         this.squares[a] === this.squares[d]
