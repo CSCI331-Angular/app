@@ -30,19 +30,20 @@ export class BoardComponent implements OnInit {
   newGame() {
     for(let row=0; row<5;row++){
       setTimeout(() => {
+      
+        let moverRow=4-row;
+        for(let column=0; column<6;column++){
+          //Empty the from the top down 
+          this.squares[(row*6)+column]='';
 
-      //Empty the from the top down 
-      for(let column=0; column<6;column++){
-        this.squares[(row*6)+column]='';
-      }
-
-      //move row down
-      let moverRow=4-row;
-      for(let column=0; column<6;column++){
-        this.squares[(moverRow*6)+column]=this.squares[(moverRow*6)+column-6];
-      }
-    }, row*500);
+          this.squares[(moverRow*6)+column]=this.squares[(moverRow*6)+column-6];
+        }
+        
+       }, row*500);
     }
+    this.winner = undefined;
+    this.xIsNext = true;
+    this.gameOver=false;
 
   }
 

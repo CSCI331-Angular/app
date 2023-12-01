@@ -34,6 +34,7 @@ button{
 .r2{
     order: 2;
     max-width: fit-content;
+    margin-left: 10px;
 }
 
 h1{
