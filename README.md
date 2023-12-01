@@ -22,8 +22,9 @@ will allow you the proper permissions. If you would like to change your permissi
 -------------------------------------------------------------------------
 __CONNECT ANGULAR: Our Angular Project__  
 Links to GitHub repos:
+  https://github.com/CSCI331-Angular/app.git
 
-Link to the site running on the MSU CSCI331 server:
+Link to the site running on the MSU CSCI331 server(Only accessible via MSU_Secure):
 
 Link to our slideshow:
 https://tinyurl.com/32urpr5f
