@@ -1,8 +1,0 @@
-<h1>{{title}}</h1>
-<div>
-  <button (click)="getData()">Get API Data</button>
-</div>
-<div *ngIf="apiResponse">
-  <pre>{{ apiResponse | json }}</pre>
-</div>
-<router-outlet></router-outlet>
