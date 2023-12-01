@@ -13,32 +13,63 @@ export class BoardComponent implements OnInit {
   squares: string[] = [];
   xIsNext?: boolean;
   winner?: string;
+  gameOver: boolean = false;
 
   constructor() {}
 
   ngOnInit() {
-      this.newGame();
+      this.loadGame();
   }
-
-  newGame() {
+  loadGame(){
     this.squares = Array(30).fill(null);
     this.winner = undefined;
     this.xIsNext = true;
+    this.gameOver=false;
+  }
+
+  newGame() {
+    for(let row=0; row<5;row++){
+      setTimeout(() => {
+
+      //Empty the from the top down 
+      for(let column=0; column<6;column++){
+        this.squares[(row*6)+column]='';
+      }
+
+      //move row down
+      let moverRow=4-row;
+      for(let column=0; column<6;column++){
+        this.squares[(moverRow*6)+column]=this.squares[(moverRow*6)+column-6];
+      }
+    }, row*500);
+    }
+
   }
 
   get player() {
-    return this.xIsNext ? 'X' : 'O';
+    return this.xIsNext ? '🔴' : '🟡 ';
   }
 
-  makeMove(idx: number) {
-    if (!this.squares[idx]) {
-      
-      this.squares.splice(idx, 1, this.player);
-      this.xIsNext = !this.xIsNext;
+  makeMove(column: number): void {
+    if (this.gameOver) {
+      return;
     }
-
+  
+    for (let row =4 ; row >= 0; row--) {
+      const index = row * 6 + column;
+      if (!this.squares[index]) {
+        this.squares.splice(index, 1, this.player);
+        this.xIsNext = !this.xIsNext;
+        break; 
+      }
+    }
+  
     this.winner = this.calculateWinner();
+    if (this.winner !== undefined) {
+      this.gameOver = true;
+    }
   }
+  
 
   calculateWinner() {
     const lines = [

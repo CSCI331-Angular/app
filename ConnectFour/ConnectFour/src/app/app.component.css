@@ -1,0 +1,19 @@
+
+::ng-deep body {
+    background-color: #e6ffff;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.board{
+    margin: auto;
+    margin-left: 2%;
+}
+
+h1{
+    background-color: #828899;
+    margin: auto;
+    margin-left: 30%;
+    margin-right: 30%;
+    text-align: center;
+    font-size: 4em;
+    border: 5px solid;
+}

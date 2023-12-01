@@ -2,9 +2,48 @@ main {
     display: grid;
     grid-template-columns: 150px 150px 150px 150px 150px 150px;
     grid-gap: 0px;
+    font-size: 1em;
 }
 
 app-square {
     border: 1px gray solid;
     height: 150px;
 }
+button{
+    font-size: 2em;
+    font-style: italic;
+    background-color: #6666ff;
+    
+}
+.container {
+    display: flex;
+}
+  
+.left {
+    order: 1;   
+}
+  
+.right {
+    order: 2; 
+    display: flex;  
+}
+.r1{
+    order: 1;
+
+}
+.r2{
+    order: 2;
+    max-width: fit-content;
+}
+
+h1{
+    
+    padding-top: 50px;
+    padding-bottom: 10px;
+    
+}
+
+  
+
+  
+
