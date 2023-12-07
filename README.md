@@ -24,7 +24,7 @@ __CONNECT ANGULAR: Our Angular Project__
 Links to GitHub repos:
   https://github.com/CSCI331-Angular/app.git
 
-Link to the site running on the MSU CSCI331 server(Only accessible via MSU_Secure):
+Link to the site running on the MSU CSCI331 server(Only accessible via MSU_Secure): N/A (Unable to host on the server, will be submitting a video demo.)
 
 Link to our slideshow:
 https://tinyurl.com/32urpr5f
